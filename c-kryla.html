@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>KRYLA Communications. Відеопродакшн у Відні</title>
+<meta name="description" content="KRYLA Communications: студія відеосторітелінгу у Відні. Документальні фільми, відео для міжнародних ініціатив, подій і бізнес-спільнот.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@700..900&family=Commissioner:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#F5B1CC;
+  --pink-lt:#FBDCE8;
+  --ink:#21121A;
+  --ink-2:#4A3540;
+  --white:#FFFFFF;
+  --wrap:1344px;
+  --gut:clamp(16px,3.4vw,48px);
+  --cond:'Sofia Sans Extra Condensed','Arial Narrow',sans-serif;
+  --sans:'Commissioner',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--pink);color:var(--ink);font:400 18px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,dl,dd,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.on-ink :focus-visible{outline-color:var(--pink)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.sec{padding:clamp(80px,10vw,144px) 0}
+.on-ink{background:var(--ink);color:var(--white)}
+.on-white{background:var(--white)}
+.big{font-family:var(--cond);font-weight:900;text-transform:uppercase;line-height:.86;letter-spacing:-.005em}
+h2.big{font-size:clamp(64px,9vw,148px)}
+h3{font-weight:700;font-size:20px;line-height:1.3}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border:2px solid var(--ink);font-family:var(--sans);font-size:17px;font-weight:700;line-height:1.1;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background-color .2s,color .2s}
+.btn--ink{background:var(--ink);color:var(--white)}
+.btn--ink:hover{background:var(--ink-2);border-color:var(--ink-2)}
+.btn--line{background:transparent;color:var(--ink)}
+.btn--line:hover{background:var(--ink);color:var(--white)}
+.on-ink .btn--line{border-color:var(--pink);color:var(--pink)}
+.on-ink .btn--line:hover{background:var(--pink);color:var(--ink)}
+.link{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
+
+/* header */
+.head{position:sticky;top:0;z-index:20;background:var(--ink);color:var(--white)}
+.head .wrap{height:68px;display:flex;align-items:center;gap:32px}
+.head__logo img{height:38px;width:auto}
+.nav{display:flex;gap:28px;margin-left:auto;font-size:16px;font-weight:600}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--pink)}
+.lang{display:flex;font-size:15px;font-weight:600}
+.lang a{padding:8px 7px;color:#B9A8B1;text-decoration:none;cursor:pointer}
+.lang a[aria-current]{color:var(--pink)}
+.head .btn{min-height:42px;padding:0 18px;font-size:15px;background:var(--pink);color:var(--ink);border-color:var(--pink)}
+.head .btn:hover{background:var(--white);border-color:var(--white)}
+.burger{display:none;background:none;border:2px solid var(--pink);color:var(--pink);font-family:var(--sans);font-size:15px;font-weight:700;height:42px;padding:0 16px;cursor:pointer}
+
+/* hero */
+.hero{padding-top:clamp(20px,2.4vw,36px)}
+.fit{display:block;width:max-content;white-space:nowrap;font-family:var(--cond);font-weight:900;text-transform:uppercase;line-height:.84;letter-spacing:-.005em}
+.hero__l1{font-size:15.2vw}
+.hero__l2{font-size:12.6vw}
+.band{display:block;position:relative;height:clamp(220px,33svh,420px);margin:clamp(14px,1.6vw,24px) 0;background:var(--pink);overflow:hidden;isolation:isolate}
+.band>img,.band iframe{filter:grayscale(1) contrast(1.15) brightness(1.08);mix-blend-mode:multiply}
+.band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
+.band iframe{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:0;opacity:0;transition:opacity 1.2s;pointer-events:none}
+.band.is-playing iframe{opacity:1}
+.band::after{content:'';position:absolute;inset:0;background:var(--ink);mix-blend-mode:lighten;pointer-events:none;z-index:2}
+.hero__foot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:center;padding:clamp(24px,3vw,40px) 0 clamp(56px,7vw,96px)}
+.hero__foot p{font-size:clamp(19px,1.6vw,23px);line-height:1.4;font-weight:500;max-width:40ch}
+.hero__actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(40px,6vw,96px);align-items:start}
+.about__lead{font-size:clamp(26px,2.6vw,38px);line-height:1.2;font-weight:700;letter-spacing:-.01em}
+.about__body p+p{margin-top:1em}
+.about__body .btn{margin-top:32px}
+.aims{grid-column:1/-1;border-top:3px solid var(--ink)}
+.aims li{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:clamp(40px,5.4vw,84px);line-height:.95;padding:14px 0 10px;border-bottom:3px solid var(--ink)}
+
+/* work */
+.work__head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:clamp(36px,4vw,56px)}
+.work__head h2{color:var(--pink)}
+.on-ink .link{color:var(--pink)}
+.mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px 20px}
+.card{display:flex;flex-direction:column;text-decoration:none}
+.card__img{position:relative;aspect-ratio:16/9;overflow:hidden;background:#3a2832}
+.card__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .card__img img,.card:focus-visible .card__img img{transform:scale(1.04)}
+.card--big{grid-column:span 2;grid-row:span 2}
+.card--wide{grid-column:span 2}
+.card--big .card__img,.card--wide .card__img{aspect-ratio:auto;flex:1;min-height:200px}
+.card h3{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:clamp(28px,2.3vw,36px);line-height:.95;margin-top:14px}
+.card--big h3{font-size:clamp(40px,4vw,64px)}
+.card__meta{display:flex;justify-content:space-between;gap:12px;margin-top:6px;font-size:15px;color:#D9C7D0}
+.card__meta span:last-child{color:var(--pink);font-variant-numeric:tabular-nums}
+.work__note{margin-top:40px;color:#D9C7D0;font-size:16px}
+
+/* voices */
+.voices{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);margin-top:clamp(40px,5vw,64px)}
+.voice blockquote{font-size:clamp(23px,2.2vw,32px);line-height:1.25;font-weight:700;letter-spacing:-.01em}
+.voice figcaption{margin-top:22px;font-size:17px;line-height:1.45}
+.voice figcaption strong{display:block}
+.voice__acts{margin-top:12px}
+.voice details{margin-top:16px;font-size:17px;max-width:62ch}
+.voice summary{cursor:pointer;font-weight:700;width:max-content}
+.voice details p{margin-top:10px}
+
+/* services */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);margin-top:clamp(40px,5vw,64px)}
+.svc__group>h3{font-size:17px;margin-bottom:12px;color:var(--ink-2)}
+.svc dl div{padding:18px 0;border-top:2px solid var(--ink)}
+.svc dt{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:clamp(30px,2.6vw,40px);line-height:.95}
+.svc dd{margin-top:6px;color:var(--ink-2);font-size:17px;max-width:48ch}
+.svc__cta{margin-top:48px}
+
+/* process */
+.process__intro{margin-top:24px;max-width:54ch;font-size:clamp(19px,1.5vw,22px);font-weight:500}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;margin-top:clamp(40px,5vw,72px)}
+.steps__n{display:block;font-family:var(--cond);font-weight:900;font-size:clamp(88px,9vw,140px);line-height:.8;margin-bottom:16px}
+.steps h3{margin-bottom:8px}
+.steps p{font-size:16px;color:var(--ink-2)}
+
+/* why / whom */
+.why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin-top:clamp(40px,5vw,64px)}
+.why h3{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:34px;line-height:.95;color:var(--pink)}
+.why p{font-size:16px;color:#E2D3DA;margin-top:10px}
+.whom{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);margin-top:clamp(72px,9vw,120px);padding-top:clamp(40px,5vw,56px);border-top:2px solid rgba(245,177,204,.35)}
+.whom__lead{font-size:clamp(22px,2vw,28px);font-weight:700;line-height:1.25}
+.whom__aud{margin-top:14px;color:#E2D3DA}
+.logos{display:flex;flex-wrap:wrap;gap:32px 48px;align-items:center}
+.logos img{height:42px;width:auto;max-width:160px;object-fit:contain;filter:brightness(0) invert(1);opacity:.85}
+
+/* contact */
+.wings{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(12px,2vw,28px)}
+.wings__side{display:grid;gap:clamp(6px,.8vw,12px)}
+.wings__side i{display:block;height:clamp(8px,1vw,16px);background:var(--ink)}
+.wings__side--l i{justify-self:end}
+.wings__side--r i{justify-self:start}
+.wings__side i:nth-child(1){width:100%}
+.wings__side i:nth-child(2){width:78%}
+.wings__side i:nth-child(3){width:56%}
+.wings__side i:nth-child(4){width:34%}
+.wings h2{font-size:clamp(56px,8.4vw,136px);text-align:center}
+.contact__lead{text-align:center;max-width:46ch;margin:28px auto 0;font-size:clamp(19px,1.5vw,22px);font-weight:500}
+.contact__grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,6vw,96px);margin-top:clamp(48px,6vw,80px)}
+.form{display:grid;gap:16px}
+.form label{display:grid;gap:6px;font-size:16px;font-weight:700}
+.form input,.form textarea{font:inherit;color:var(--ink);background:var(--white);border:2px solid var(--ink);border-radius:0;padding:12px 14px}
+.form textarea{min-height:132px;resize:vertical}
+.form input:focus,.form textarea:focus{outline:3px solid var(--ink);outline-offset:2px}
+.form .btn{justify-self:start;margin-top:6px}
+.form__msg{font-weight:700}
+.reach{display:grid;gap:32px;align-content:start}
+.reach h3{font-size:16px;margin-bottom:10px}
+.reach__row{display:flex;flex-wrap:wrap;gap:8px}
+.reach address{font-style:normal}
+.reach .mail{font-weight:700;font-size:clamp(19px,1.6vw,22px)}
+
+.foot{padding:28px 0 96px;font-size:15px}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+.foot a{text-decoration:none;color:#D9C7D0}
+.foot a:hover{color:var(--pink)}
+.foot span{margin-right:auto}
+
+@media (max-width:1100px){
+  .nav{position:fixed;inset:68px 0 0;flex-direction:column;gap:0;background:var(--ink);padding:24px var(--gut);font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:56px;line-height:1.05;display:none;margin:0}
+  body.nav-open .nav{display:flex}
+  .burger{display:inline-flex;align-items:center}
+  .head .wrap{gap:12px}
+  .head .btn{display:none}
+  .lang{margin-left:auto}
+  .mosaic{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card--wide{grid-column:span 2}
+  .why{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:40px}
+}
+@media (max-width:860px){
+  .about,.voices,.svc,.whom,.contact__grid,.hero__foot{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  body{font-size:17px}
+  .mosaic{grid-template-columns:1fr}
+  .card--big,.card--wide{grid-column:auto;grid-row:auto}
+  .card--big .card__img,.card--wide .card__img{aspect-ratio:16/9;flex:none;min-height:0}
+  .card--big h3{font-size:40px}
+  .why{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .hero__actions .btn{flex:1}
+  .band{height:46svh}
+  .wings__side i{height:6px}
+  .logos{gap:24px 32px}
+  .logos img{height:32px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card__img img{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="wrap">
+    <a class="head__logo" href="#top"><img src="https://ndenysenko.github.io/kryla/img/logo.png" alt="KRYLA Communications" width="96" height="38"></a>
+    <nav class="nav" id="nav" data-nav aria-label="Основне меню">
+      <a href="#about">Про нас</a>
+      <a href="#work">Роботи</a>
+      <a href="#services">Послуги</a>
+      <a href="#process">Процес</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+    <div class="lang" aria-label="Мова сайту">
+      <a data-lang="uk" aria-current="true" lang="uk">UA</a>
+      <a data-lang="en" lang="en">EN</a>
+      <a data-lang="de" lang="de">DE</a>
+    </div>
+    <a class="btn" href="#contact">Обговорити проєкт</a>
+    <button class="burger" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav">Меню</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1>
+        <span class="fit hero__l1">Відеосторітелінг</span>
+        <span class="band" data-yt-bg="ELnFxOwJunY"><img src="https://i.ytimg.com/vi/ELnFxOwJunY/maxresdefault.jpg" alt=""></span>
+        <span class="fit hero__l2">із реальним впливом</span>
+      </h1>
+      <div class="hero__foot">
+        <p>Студія відеопродакшну у Відні. Знімаємо для міст, країн, спільнот і людей, які творять зміни.</p>
+        <div class="hero__actions">
+          <a class="btn btn--ink" href="https://www.youtube.com/watch?v=tMhzMaNlVpo" data-yt="tMhzMaNlVpo" data-title="Шоурил KRYLA Communications"><svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><path d="M0 0l12 7-12 7z" fill="currentColor"/></svg>Дивитися шоурил</a>
+          <a class="btn btn--line" href="#contact">Обговорити проєкт</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec on-white" id="about">
+    <div class="wrap about">
+      <h2 class="sr">Про студію</h2>
+      <p class="about__lead">KRYLA знімає відео для міжнародних ініціатив, глобальних подій, бізнес-спільнот і людей, які змінюють міста, країни та системи.</p>
+      <div class="about__body">
+        <p>Ми працюємо з відео там, де є реальний вплив: на спільноти, економічні середовища, репутації та долі людей. Вплив для нас головна тема і критерій кожного проєкту.</p>
+        <p>Формати можуть змінюватися. Відповідальність і масштаб залишаються.</p>
+        <a class="btn btn--ink" href="#contact">Обговорити відеоідею</a>
+      </div>
+      <ul class="aims" aria-label="Що робить наше відео">
+        <li>Формування довіри</li>
+        <li>Публічна комунікація</li>
+        <li>Пояснення складних процесів</li>
+        <li>Підсилення ініціатив</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec on-ink" id="work">
+    <div class="wrap">
+      <div class="work__head">
+        <h2 class="big">Роботи</h2>
+        <a class="link" href="https://www.youtube.com/@KrylaCommunications/videos">Усі фільми на YouTube</a>
+      </div>
+      <div class="mosaic">
+        <a class="card card--big" href="https://www.youtube.com/watch?v=O-jncKXAbd4" data-yt="O-jncKXAbd4" data-title="50 років KSÖ">
+          <div class="card__img"><img src="https://i.ytimg.com/vi/O-jncKXAbd4/maxresdefault.jpg" alt="" loading="lazy"></div>
+          <h3>50 років KSÖ</h3>
+          <p class="card__meta"><span>Документальний фільм, Австрія</span><span>15:00</span></p>
+        </a>
+        <a class="card" href="https://www.youtube.com/watch?v=jj5inAZiv2c" data-yt="jj5inAZiv2c" data-title="CITY DNA">
+          <div class="card__img"><img src="https://i.ytimg.com/vi/jj5inAZiv2c/sddefault.jpg" alt="" loading="lazy"></div>
+          <h3>CITY DNA</h3>
+          <p class="card__meta"><span>Серіал для UMAEF</span><span>1:39</span></p>
+        </a>
+        <a class="card" href="https://www.youtube.com/watch?v=aR5-gKr_L7w" data-yt="aR5-gKr_L7w" data-title="Україна на World Cheese Awards 2025">
+          <div class="card__img"><img src="https://i.ytimg.com/vi/aR5-gKr_L7w/sddefault.jpg" alt="" loading="lazy"></div>
+          <h3>World Cheese Awards</h3>
+          <p class="card__meta"><span>Відеозвіт, 2025</span><span>4:46</span></p>
+        </a>
+        <a class="card" href="https://www.youtube.com/watch?v=eEivPl-GGh4" data-yt="eEivPl-GGh4" data-title="Український павільйон на BIOFACH">
+          <div class="card__img"><img src="https://i.ytimg.com/vi/eEivPl-GGh4/sddefault.jpg" alt="" loading="lazy"></div>
+          <h3>Павільйон на BIOFACH</h3>
+          <p class="card__meta"><span>Відеозвіт</span><span>5:48</span></p>
+        </a>
+        <a class="card" href="https://www.youtube.com/watch?v=vvwHwwicqcA" data-yt="vvwHwwicqcA" data-title="Lugano Business Forum 2023">
+          <div class="card__img"><img src="https://i.ytimg.com/vi/vvwHwwicqcA/sddefault.jpg" alt="" loading="lazy"></div>
+          <h3>Lugano Business Forum</h3>
+          <p class="card__meta"><span>Відео форуму, 2023</span><span>1:57</span></p>
+        </a>
+        <a class="card card--wide" href="https://www.youtube.com/watch?v=HVLzHV2kxFk" data-yt="HVLzHV2kxFk" data-title="7 жінок і війна">
+          <div class="card__img"><img src="https://i.ytimg.com/vi/HVLzHV2kxFk/maxresdefault.jpg" alt="" loading="lazy"></div>
+          <h3>7 жінок і війна</h3>
+          <p class="card__meta"><span>Документальний фільм, Давос, 2022</span><span>9:04</span></p>
+        </a>
+        <a class="card" href="https://www.youtube.com/watch?v=iPams-I-Y80" data-yt="iPams-I-Y80" data-title="Ukrainian House Davos">
+          <div class="card__img"><img src="https://i.ytimg.com/vi/iPams-I-Y80/sddefault.jpg" alt="" loading="lazy"></div>
+          <h3>Ukrainian House Davos</h3>
+          <p class="card__meta"><span>World Economic Forum, 2022</span><span>1:51</span></p>
+        </a>
+        <a class="card" href="https://www.youtube.com/watch?v=8cCBES-1lyE" data-yt="8cCBES-1lyE" data-title="Вертеп у Відні">
+          <div class="card__img"><img src="https://i.ytimg.com/vi/8cCBES-1lyE/sddefault.jpg" alt="" loading="lazy"></div>
+          <h3>Вертеп у Відні</h3>
+          <p class="card__meta"><span>Трейлер документального фільму</span><span>1:29</span></p>
+        </a>
+      </div>
+      <p class="work__note">На робочому сайті кожен фільм матиме свою сторінку: відео, опис, клієнт і команда.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="voices">
+    <div class="wrap">
+      <h2 class="big">Що кажуть клієнти</h2>
+      <div class="voices">
+        <figure class="voice">
+          <blockquote><p>«Фільм був дуже добре сприйнятий як внутрішньо, так і зовнішньо, і став центральним та елегантним елементом нашої ювілейної комунікації.»</p></blockquote>
+          <figcaption><strong>Dr. Alexander Janda</strong>Генеральний секретар KSÖ, Австрія
+            <div class="voice__acts"><a class="link" href="https://www.youtube.com/watch?v=O-jncKXAbd4" data-yt="O-jncKXAbd4" data-title="50 років KSÖ">Дивитися фільм «50 років KSÖ»</a></div>
+          </figcaption>
+          <details><summary>Повний відгук</summary><p>«Завдяки професійній роботі пані Стащенко та її команди кінцевий результат перевершив наші очікування. Фільм був дуже добре сприйнятий як внутрішньо, так і зовнішньо, і став центральним та елегантним елементом нашої ювілейної комунікації. Ми щиро рекомендуємо KRYLA Communications як надійного та креативного партнера для високоякісних документальних і корпоративних фільмів.»</p></details>
+        </figure>
+        <figure class="voice">
+          <blockquote><p>«Пані Стащенко поєднує журналістську точність із сильним управлінням проєктами та майстерністю розповіді історій.»</p></blockquote>
+          <figcaption><strong>Iryna Ozymok</strong>Director of Local Economic Development, UMAEF
+            <div class="voice__acts"><a class="link" href="https://www.youtube.com/watch?v=jj5inAZiv2c" data-yt="jj5inAZiv2c" data-title="CITY DNA">Дивитися серіал CITY DNA</a></div>
+          </figcaption>
+          <details><summary>Повний відгук</summary><p>«Пані Стащенко поєднує журналістську точність із сильним управлінням проєктами та майстерністю розповіді історій. Вона будує комунікаційні мости між установами, ЗМІ та громадянами, як в Україні, так і на міжнародному рівні, досягаючи вимірних результатів і справжньої відданості. Пані Стащенко вміло поєднує виробництво контенту з комунікаційною стратегією, забезпечуючи чіткість, емоційний резонанс та інституційну узгодженість.»</p></details>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec on-white" id="services">
+    <div class="wrap">
+      <h2 class="big">Послуги</h2>
+      <div class="svc">
+        <div class="svc__group">
+          <h3>Відеовиробництво</h3>
+          <dl>
+            <div><dt>Сценарій</dt><dd>Сценарії для документальних фільмів, бренд-відео, соціальних і культурних проєктів. Драматургія, наратив і сенси.</dd></div>
+            <div><dt>Відеозйомка</dt><dd>Повний цикл: від підготовки і продакшн-планування до фінального результату. Різні формати й локації.</dd></div>
+            <div><dt>Монтаж</dt><dd>Документальні формати, інтерв'ю, промо, соціальні та освітні відео будь-якої складності.</dd></div>
+            <div><dt>Зйомка зі спецтехнікою</dt><dd>Дрони, стедікам та інша техніка для динамічних і кінематографічних кадрів.</dd></div>
+            <div><dt>Прямі трансляції</dt><dd>Трансляції подій, конференцій, презентацій і культурних заходів.</dd></div>
+          </dl>
+        </div>
+        <div class="svc__group">
+          <h3>Бренд, архів і соцмережі</h3>
+          <dl>
+            <div><dt>Реставрація старих фільмів</dt><dd>Цифрова реставрація та кольоризація чорно-білого відео.</dd></div>
+            <div><dt>AI у відеопродакшні</dt><dd>AI-інструменти на етапах підготовки, зйомки та постпродакшну.</dd></div>
+            <div><dt>Візуальний бренд</dt><dd>Як відео та візуальні рішення посилюють позиціонування і впізнаваність.</dd></div>
+            <div><dt>Бренд-стратегія</dt><dd>Аудиторія, позиціонування, ключові повідомлення, brand DNA і tone of voice.</dd></div>
+            <div><dt>Айдентика і брендбук</dt><dd>Візуальна ідентичність, ребрендинг і правила комунікації для команд і партнерів.</dd></div>
+            <div><dt>SMM з фокусом на відео</dt><dd>Стратегія, план, створення і публікація відеоконтенту для соцмереж.</dd></div>
+          </dl>
+        </div>
+      </div>
+      <a class="btn btn--ink svc__cta" href="#contact">Отримати консультацію</a>
+    </div>
+  </section>
+
+  <section class="sec" id="process">
+    <div class="wrap">
+      <h2 class="big">Як ми працюємо</h2>
+      <p class="process__intro">KRYLA працює як продакшн-партнер, а не як виконавець. Ми контролюємо якість на кожному етапі й відповідаємо за результат.</p>
+      <ol class="steps">
+        <li><span class="steps__n">1</span><h3>Контекст і цілі</h3><p>Розбираємося в контексті, масштабі й задачі, щоб відео працювало на цілі проєкту та аудиторію.</p></li>
+        <li><span class="steps__n">2</span><h3>Ідея і напрям</h3><p>Формуємо ідею і візуальну мову, яка найкраще передає сенс.</p></li>
+        <li><span class="steps__n">3</span><h3>Зйомка</h3><p>Продюсуємо і знімаємо структуровано, професійно та в узгоджені терміни.</p></li>
+        <li><span class="steps__n">4</span><h3>Постпродакшн</h3><p>Монтуємо й доводимо матеріал до цілісного, готового до використання відео.</p></li>
+        <li><span class="steps__n">5</span><h3>Готове відео і супровід</h3><p>Передаємо результат і за потреби радимо, як використовувати відео далі.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec on-ink" id="why">
+    <div class="wrap">
+      <h2 class="big" style="color:var(--pink)">Чому KRYLA</h2>
+      <p class="process__intro">Продюсерське мислення, документальний підхід і кінематографічна естетика.</p>
+      <div class="why">
+        <div><h3>Точність і сенси</h3><p>Ми не просто знімаємо, ми будуємо меседж. Кожен кадр має стратегічне значення.</p></div>
+        <div><h3>Просто про складне</h3><p>Знаходимо зрозумілу візуальну форму для глибоких ідей, не втрачаючи суті.</p></div>
+        <div><h3>Реальний вплив</h3><p>Наше відео працює на репутацію, змінює думки та допомагає залучати ресурси.</p></div>
+        <div><h3>Естетика кіно</h3><p>Інструменти великого кіно посилюють емоційний зв'язок із глядачем.</p></div>
+      </div>
+      <div class="whom">
+        <div>
+          <p class="whom__lead">Працюємо з тими, для кого важливо, як, навіщо і з яким впливом вони говорять зі світом.</p>
+          <p class="whom__aud">Міжнародні фонди, бізнес-спільноти, глобальні платформи і події, освітні ініціативи, персональні бренди.</p>
+        </div>
+        <div class="logos" aria-label="Клієнти">
+          <img src="https://ndenysenko.github.io/kryla/img/clients/ksoe.svg" alt="KSÖ" loading="lazy">
+          <img src="https://ndenysenko.github.io/kryla/img/clients/um.png" alt="Ukraine-Moldova American Enterprise Fund" loading="lazy">
+          <img src="https://ndenysenko.github.io/kryla/img/clients/lugano.svg" alt="Lugano Business Forum" loading="lazy">
+          <img src="https://ndenysenko.github.io/kryla/img/clients/uhv.png" alt="Ukraine House Vienna" loading="lazy">
+          <img src="https://ndenysenko.github.io/kryla/img/clients/biofach.png" alt="BIOFACH" loading="lazy">
+          <img src="https://ndenysenko.github.io/kryla/img/clients/cheese.svg" alt="World Cheese Awards" loading="lazy">
+          <img src="https://ndenysenko.github.io/kryla/img/clients/ims.png" alt="International Mayors Summit" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="wings">
+        <div class="wings__side wings__side--l" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <h2 class="big">Обговорімо<br>проєкт</h2>
+        <div class="wings__side wings__side--r" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+      <p class="contact__lead">Опишіть задачу кількома реченнями. Ми зв'яжемося, щоб обговорити формат, терміни та бюджет.</p>
+      <div class="contact__grid">
+        <form class="form" data-demo>
+          <label>Ім'я<input name="name" autocomplete="name" required></label>
+          <label>Email або телефон<input name="contact" autocomplete="email" required></label>
+          <label>Про проєкт<textarea name="message" rows="4"></textarea></label>
+          <button class="btn btn--ink" type="submit">Надіслати заявку</button>
+          <p class="form__msg" data-form-msg hidden role="status">Це макет. На робочому сайті заявка прийде на пошту KRYLA.</p>
+        </form>
+        <div class="reach">
+          <div>
+            <h3>Зустріч або дзвінок</h3>
+            <a class="btn btn--ink" href="#" data-demo-link="Тут відкриється календар: клієнт сам обирає час зустрічі або дзвінка.">Записатися на дзвінок</a>
+          </div>
+          <div>
+            <h3>Месенджери</h3>
+            <div class="reach__row">
+              <a class="btn btn--line" href="#" data-demo-link="Посилання на Telegram додамо, коли Алла його надішле.">Telegram</a>
+              <a class="btn btn--line" href="#" data-demo-link="Посилання на WhatsApp додамо, коли Алла його надішле.">WhatsApp</a>
+              <a class="btn btn--line" href="#" data-demo-link="Посилання на Instagram додамо, коли Алла його надішле.">Instagram</a>
+            </div>
+          </div>
+          <div>
+            <h3>Пошта і студія</h3>
+            <a class="link mail" href="mailto:krylacommunications@gmail.com">krylacommunications@gmail.com</a>
+            <address>Lienfeldergasse 98/9, 1170 Відень, Австрія</address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot on-ink">
+  <div class="wrap">
+    <span>© 2026 KRYLA Communications</span>
+    <a href="#" data-demo-link="Сторінка Impressum з текстом зі старого сайту.">Impressum</a>
+    <a href="#" data-demo-link="Політика конфіденційності з текстом зі старого сайту.">Політика конфіденційності</a>
+    <a href="https://www.youtube.com/@KrylaCommunications/videos">YouTube</a>
+  </div>
+</footer>
+
+<script>
+/* Shared behaviour for the KRYLA homepage mockups:
+   background video, video lightbox, mobile menu, language switch stub, demo form, mockup switcher. */
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Background video (YouTube, no-cookie host) ---------- */
+  const bgs = [...document.querySelectorAll('[data-yt-bg]')];
+  const fit = (box, frame) => {
+    const w = box.clientWidth, h = box.clientHeight, r = 16 / 9, s = 1.32;
+    let fw, fh;
+    if (w / h > r) { fw = w; fh = w / r; } else { fh = h; fw = h * r; }
+    frame.style.width = Math.ceil(fw * s) + 'px';
+    frame.style.height = Math.ceil(fh * s) + 'px';
+  };
+  if (bgs.length && !reduce) {
+    const prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => {
+      if (prev) prev();
+      bgs.forEach(box => {
+        const id = box.dataset.ytBg;
+        const holder = document.createElement('div');
+        box.appendChild(holder);
+        const p = new YT.Player(holder, {
+          host: 'https://www.youtube-nocookie.com',
+          videoId: id,
+          playerVars: { autoplay: 1, mute: 1, controls: 0, loop: 1, playlist: id, playsinline: 1, rel: 0, disablekb: 1, iv_load_policy: 3, fs: 0, origin: location.origin },
+          events: {
+            onReady: e => {
+              const f = e.target.getIframe();
+              f.setAttribute('tabindex', '-1');
+              f.setAttribute('aria-hidden', 'true');
+              f.title = '';
+              fit(box, f);
+              addEventListener('resize', () => fit(box, f));
+              e.target.mute();
+              e.target.playVideo();
+            },
+            onStateChange: e => {
+              /* reveal after YouTube's own start-up overlay has faded */
+              if (e.data === 1 && !box.dataset.revealing) { box.dataset.revealing = '1'; setTimeout(() => box.classList.add('is-playing'), 3000); }
+              if (e.data === 5 || e.data === -1) e.target.playVideo();
+              /* paused (e.g. the tab went to the background): show the still, resume */
+              if (e.data === 2) { box.classList.remove('is-playing'); delete box.dataset.revealing; e.target.playVideo(); }
+            }
+          }
+        });
+        (window.__krPlayers = window.__krPlayers || []).push(p);
+      });
+    };
+    const s = document.createElement('script');
+    s.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(s);
+  }
+
+  /* ---------- Video lightbox ---------- */
+  const css = document.createElement('style');
+  css.textContent = `
+  .kr-lightbox{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;display:none}
+  .kr-lightbox[open]{display:grid;place-items:center}
+  .kr-lightbox::backdrop{background:rgba(0,0,0,.92)}
+  .kr-lightbox__frame{width:min(92vw,calc(84svh*16/9));aspect-ratio:16/9;background:#000}
+  .kr-lightbox__frame iframe{width:100%;height:100%;border:0;display:block}
+  .kr-lightbox__close{position:fixed;top:16px;right:16px;width:48px;height:48px;border:0;border-radius:50%;background:#fff;color:#000;cursor:pointer;display:grid;place-items:center}
+  .kr-lightbox__close:focus-visible{outline:3px solid #F4A7C6;outline-offset:3px}
+  .kr-toast{position:fixed;left:50%;bottom:72px;transform:translateX(-50%);background:#fff;color:#111;font:500 15px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:8px;box-shadow:0 6px 30px rgba(0,0,0,.25);z-index:60;max-width:calc(100vw - 32px)}
+  .kr-mock{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;gap:4px;align-items:center;background:#fff;color:#111;font:500 13px/1 system-ui,sans-serif;padding:4px 4px 4px 12px;border-radius:999px;box-shadow:0 4px 18px rgba(0,0,0,.22)}
+  .kr-mock a{color:inherit;text-decoration:none;min-width:32px;height:32px;display:grid;place-items:center;border-radius:999px;padding:0 10px}
+  .kr-mock a[aria-current]{background:#111;color:#fff}
+  .kr-mock a:focus-visible{outline:2px solid #111;outline-offset:2px}`;
+  document.head.appendChild(css);
+
+  const dlg = document.createElement('dialog');
+  dlg.className = 'kr-lightbox';
+  dlg.setAttribute('aria-label', 'Перегляд відео');
+  dlg.innerHTML = '<button class="kr-lightbox__close" type="button" aria-label="Закрити відео"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button><div class="kr-lightbox__frame"></div>';
+  document.body.appendChild(dlg);
+  const frameBox = dlg.querySelector('.kr-lightbox__frame');
+  document.addEventListener('click', e => {
+    const a = e.target.closest('[data-yt]');
+    if (!a) return;
+    e.preventDefault();
+    frameBox.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${a.dataset.yt}?autoplay=1&rel=0&playsinline=1" title="${a.dataset.title || 'Відео KRYLA'}" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+    dlg.showModal();
+  });
+  dlg.addEventListener('click', e => { if (e.target === dlg || e.target.closest('.kr-lightbox__close')) dlg.close(); });
+  dlg.addEventListener('close', () => { frameBox.innerHTML = ''; });
+
+  /* ---------- Mobile menu ---------- */
+  document.querySelectorAll('[data-nav-toggle]').forEach(b => b.addEventListener('click', () => {
+    const open = document.body.classList.toggle('nav-open');
+    b.setAttribute('aria-expanded', String(open));
+  }));
+  document.querySelectorAll('[data-nav] a').forEach(a => a.addEventListener('click', () => {
+    document.body.classList.remove('nav-open');
+    document.querySelectorAll('[data-nav-toggle]').forEach(b => b.setAttribute('aria-expanded', 'false'));
+  }));
+
+  /* ---------- Toast ---------- */
+  let toastTimer;
+  const toast = msg => {
+    let t = document.querySelector('.kr-toast');
+    if (!t) { t = document.createElement('div'); t.className = 'kr-toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.textContent = msg;
+    t.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { t.hidden = true; }, 3200);
+  };
+
+  /* ---------- Language switch (stub in the mockup) ---------- */
+  document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', e => {
+    e.preventDefault();
+    if (b.dataset.lang !== 'uk') toast('Англійська і німецька версії будуть у робочому сайті.');
+  }));
+
+  /* ---------- Demo actions ---------- */
+  document.querySelectorAll('form[data-demo]').forEach(f => f.addEventListener('submit', e => {
+    e.preventDefault();
+    const m = f.querySelector('[data-form-msg]');
+    if (m) m.hidden = false;
+  }));
+  document.querySelectorAll('[data-demo-link]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    toast(a.dataset.demoLink);
+  }));
+
+  /* ---------- Mockup switcher ---------- */
+  const pages = [['A', 'a-tytry.html'], ['B', 'b-arkush.html'], ['C', 'c-kryla.html']];
+  const here = location.pathname.split('/').pop();
+  const bar = document.createElement('nav');
+  bar.className = 'kr-mock';
+  bar.setAttribute('aria-label', 'Варіанти макета');
+  bar.innerHTML = '<span>Варіант</span>' + pages.map(([l, h]) => `<a href="${h}"${h === here ? ' aria-current="page"' : ''}>${l}</a>`).join('');
+  document.body.appendChild(bar);
+})();
+
+</script>
+<script>
+/* Each headline line is sized to fill the column exactly, like block letters on a poster. */
+(() => {
+  const lines = [...document.querySelectorAll('.fit')];
+  const fitAll = () => lines.forEach(el => {
+    const box = el.parentElement.clientWidth;
+    el.style.fontSize = '100px';
+    el.style.fontSize = (100 * box / el.offsetWidth) + 'px';
+  });
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(fitAll);
+  addEventListener('resize', fitAll);
+})();
+</script>
+</body>
+</html>
